@@ -1,11 +1,13 @@
 class Task:
-    def __init__(self,title,status):
+    def __init__(self,title, priority):
         self.title = title
-        self.status = status
-
-    def change_status(self,new_status):
-        self.status = new_status
+        self.isCompleted = False
+        self.priority = priority
 
     def __str__(self):
-        return f"[{self.status}] {self.title}"
+        status = ""
+        if self.isCompleted:
+            status = "Fait"
+        else: status = "A faire"
+        return f"[{status}] {self.title} : {self.priority}"
 
